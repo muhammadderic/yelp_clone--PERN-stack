@@ -18,7 +18,12 @@ const createRestaurant = async (req, res) => {
 // GET ALL DATA
 const getAllRestaurants = async (req, res) => {
   try {
-    res.send("Get All Restaurants");
+    const results = await db.query(
+      "SELECT * FROM restaurants"
+    );
+    res.status(200).json({
+      restaurants: results.rows
+    })
   } catch (error) {
     console.error(error.message);
   }
@@ -27,7 +32,13 @@ const getAllRestaurants = async (req, res) => {
 // GET SINGLE DATA
 const getRestaurant = async (req, res) => {
   try {
-    res.send("Get Restaurant");
+    const id = req.params.id;
+    const results = await db.query(
+      "SELECT * FROM restaurants WHERE restaurant_id=$1", [id]
+    );
+    res.status(200).json({
+      restaurant: results.rows[0]
+    })
   } catch (error) {
     console.error(error.message);
   }

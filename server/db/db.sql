@@ -9,3 +9,7 @@ CREATE TABLE restaurants (
 
 -- Create New Restaurant
 INSERT INTO restaurants(name, location, price_range) VALUES('mcDonald', 'New York', 3)
+-- Get All Restaurants
+SELECT * FROM restaurants
+-- GET One Restaurant
+SELECT * FROM restaurants WHERE restaurant_id=1
