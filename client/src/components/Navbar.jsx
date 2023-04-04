@@ -19,7 +19,7 @@ function Navbar() {
             spacing={4}
             display={{ base: "none", md: "flex" }}>
             {Links.map(link => (
-              <Button>
+              <Button key={link[0]}>
                 <NavLink
                   to={link[1]}>{link[0]}</NavLink>
               </Button>
