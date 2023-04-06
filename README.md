@@ -13,6 +13,11 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a><li>
     <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <ol>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
+    </ol>
   </ol>
 </details>
 
@@ -25,7 +30,7 @@ Create simple yelp clone
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+## Built With
 
 This section should list any major frameworks/libraries used to bootstrap the project.
 
@@ -50,20 +55,19 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Go to server folder and run server
+3. Go to server folder and run server
    ```sh
    cd server && npm run server
    ```
-5. Go to client folder and run
+4. Go to client folder and run
    ```sh
    cd ../client && npm start
    ```
