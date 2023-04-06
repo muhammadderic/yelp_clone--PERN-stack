@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Table, TableCaption, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
+import { Button, Container, Flex, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -43,7 +43,7 @@ function Home() {
               </Tr>
             </Thead>
             <Tbody>
-              {restaurants === [] ? restaurants.map(restaurant => (
+              {restaurants.map(restaurant => (
                 <Tr key={restaurant.restaurant_id}>
                   <Td>{restaurant.name}</Td>
                   <Td>{restaurant.location}</Td>
@@ -65,8 +65,7 @@ function Home() {
                     </Button>
                   </Td>
                 </Tr>
-              )) : <Tr>
-                <Text align="center">No Data</Text></Tr>}
+              ))}
             </Tbody>
           </Table>
         </TableContainer>

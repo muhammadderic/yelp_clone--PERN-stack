@@ -16,6 +16,7 @@ function AddRestaurant() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newRestaurant)
     })
+    console.log("tersubmit");
   }
 
   return (
