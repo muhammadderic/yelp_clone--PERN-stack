@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Button, Container, Flex, Table, TableCaption, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -18,6 +18,13 @@ function Home() {
     fetchData();
   }, []);
 
+  const handleDelete = async (id) => {
+    await fetch(`http://localhost:5000/api/v1/${id}`, {
+      method: "DELETE",
+    })
+    window.location.reload();
+  }
+
   return (
     <Container maxW='container.md'>
       <Flex justify='center'>
@@ -36,7 +43,7 @@ function Home() {
               </Tr>
             </Thead>
             <Tbody>
-              {restaurants.map(restaurant => (
+              {restaurants === [] ? restaurants.map(restaurant => (
                 <Tr key={restaurant.restaurant_id}>
                   <Td>{restaurant.name}</Td>
                   <Td>{restaurant.location}</Td>
@@ -51,12 +58,15 @@ function Home() {
                     </Button>
                   </Td>
                   <Td >
-                    <Button variant="solid">
+                    <Button
+                      variant="solid"
+                      onClick={() => handleDelete(restaurant.restaurant_id)}>
                       Delete
                     </Button>
                   </Td>
                 </Tr>
-              ))}
+              )) : <Tr>
+                <Text align="center">No Data</Text></Tr>}
             </Tbody>
           </Table>
         </TableContainer>
