@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AddRestaurant from "./pages/AddRestaurant";
 import DetailRestaurant from "./pages/DetailRestaurant";
 import Layout from "./components/Layout";
+import UpdateRestaurant from "./pages/UpdateRestaurant";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/add" element={<AddRestaurant />} />
-          <Route path="/update/:id" element={<DetailRestaurant />} />
+          <Route path="/:id/update" element={<UpdateRestaurant />} />
+          <Route path="/:id/detail" element={<DetailRestaurant />} />
         </Route>
       </Routes>
     </BrowserRouter>

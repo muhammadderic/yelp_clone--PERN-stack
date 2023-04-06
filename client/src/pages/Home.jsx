@@ -1,6 +1,6 @@
 import { Button, Container, Flex, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [restaurants, setRestaurants] = useState([]);
@@ -37,14 +37,17 @@ function Home() {
             </Thead>
             <Tbody>
               {restaurants.map(restaurant => (
-                <Tr key={restaurant.id}>
+                <Tr key={restaurant.restaurant_id}>
                   <Td>{restaurant.name}</Td>
                   <Td>{restaurant.location}</Td>
-                  <Td isNumeric>{restaurant.price_range}</Td>
+                  <Td>{"$".repeat(restaurant.price_range)}</Td>
                   <Td >Good</Td>
                   <Td >
-                    <Button variant="solid">
-                      Edit
+                    <Button
+                      variant="solid">
+                      <NavLink to={`/${restaurant.restaurant_id}/update`}>
+                        Edit
+                      </NavLink>
                     </Button>
                   </Td>
                   <Td >
